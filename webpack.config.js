@@ -8,7 +8,11 @@ module.exports = {
         rules: [
             {
                 test: /\.ts?$/,
-                use: 'ts-loader',
+                loader: 'esbuild-loader',
+                options: {
+                    loader: 'ts',
+                    target: 'es2016'
+                },
                 exclude: /node_modules/,
             },
             {
